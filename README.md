@@ -1,3 +1,11 @@
+## License
+
+This project is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0).  
+You may view the code for educational purposes only.  
+You may not copy, distribute, or modify it without explicit permission.
+
+[Read the full license here](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
 ## Distinctiveness and Complexity
 
 First before I start describing the Distinctiveness and complexity of this project, I would like to thank all the CS50 team for offering so much good information and classes for free. Thanks to this I was able to find my passion for code design that has allowed me to learn a lot these weeks that I have been focused doing this course, without more to add, I will begin to explain the project that I did.
