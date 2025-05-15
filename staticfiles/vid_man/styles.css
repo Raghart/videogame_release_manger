@@ -1,0 +1,555 @@
+#calendar {
+    min-height: 3015px;
+    overflow: visible !important;
+  }
+
+  .fc .fc-scroller-liquid-absolute {
+    overflow: visible !important;
+}
+
+.fc-scroller {
+    overflow: hidden !important;
+    width: 100%;
+}
+
+.fc .fc-daygrid-day-number {
+    color: #63b3ed;
+}
+
+.fc .fc-daygrid-day {
+min-width: 100px;
+border-radius: 8px;
+border: 1px solid #2d3748;
+}
+
+.fc .fc-daygrid-day:hover {
+    background-color: #2d3748;
+    transition: background-color 0.3s;
+}
+
+.fc-event {
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #227ccf;
+    color: #ffffff;
+    border-radius: 4px;
+    margin-bottom: 10px; 
+}
+
+.responsive-event {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.fc-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 10px; 
+    text-align: center;
+}
+
+.responsive-event img {
+    margin-right: 10px;
+}
+
+.important-event {
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #b82828; 
+    color: #ffffff; 
+    border-radius: 4px;
+}
+
+.fc-more-popover {
+    background-color: #1a202c !important;
+    color: #eeeeee !important;  
+    border: 1px solid #ccc;
+    padding: 10px; 
+    border-radius: 5px;
+}
+
+.fc-popover {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.tippy-box[data-theme~='game'] {
+    font-family: 'Roboto', sans-serif; /* Clean and readable font */
+    background-color: #1a202c; /* bg-gray-800 */
+    color: #fff; /* White text */
+    border: 2px solid #ffcc00; /* Yellow border */
+    padding: 10px; /* Padding */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+    box-shadow: 0 4px #ff9900, 0 6px 20px rgba(0, 0, 0, 0.19); /* Enhanced shadow */
+    border-radius: 10px;
+}
+
+.tippy-box[data-theme~='game'][data-placement^='top'] > .tippy-arrow::before {
+    border-top-width: 10px; /* Increase the size */
+    border-top-color: #1a202c; /* bg-gray-900 */
+}
+
+.tippy-box[data-theme~='game'][data-placement^='bottom'] > .tippy-arrow::before {
+    border-bottom-width: 10px; /* Increase the size */
+    border-bottom-color: #1a202c; /* bg-gray-900 */
+}
+
+.tippy-box[data-theme~='game'][data-placement^='left'] > .tippy-arrow::before {
+    border-left-width: 10px; /* Increase the size */
+    border-left-color: #1a202c; /* bg-gray-900 */
+}
+
+.tippy-box[data-theme~='game'][data-placement^='right'] > .tippy-arrow::before {
+    border-right-width: 10px; /* Increase the size */
+    border-right-color: #1a202c; /* bg-gray-900 */
+}
+
+.text-blue {
+    color: #badefc
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+}
+
+.image-detail {
+    width: 180px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scaleY(0) rotateX(90deg);
+        opacity: 0;
+    }
+    25% {
+        transform: scaleY(1.1) rotateX(10deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scaleY(1) rotateX(0deg);
+        opacity: 1;
+    }
+    75% {
+        transform: scaleY(1.05) rotateX(-5deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleY(1) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+.bounce {
+    animation: bounce 0.8s ease-in-out forwards;
+    will-change: transform, opacity;
+}
+
+.opacity-0 {
+    opacity: 0 !important;
+}
+
+.pointer-events-none {
+    pointer-events: none !important;
+}
+
+@media (max-width: 600px) {
+    .responsive-event {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .responsive-event img {
+        width: 40px;
+        height: auto;
+    }
+    .responsive-event .fc-title {
+        display: none;
+    }
+    .fc .fc-daygrid-more-link {
+        font-size: 10px; /* Adjust the size as needed */
+        padding: 1px;
+        margin-top: 0;
+    }
+
+    .title {
+        font-size: 1.5rem; /* Adjust the size as needed */
+    }
+    
+    .nav-container {
+        display: flex;
+        justify-content: center; /* Center the content horizontally */
+        align-items: center;
+        width: 100%; /* Ensure the container takes full width */
+    }
+
+    li {
+        list-style: none; /* Remove any default list styling */
+        width: 200px; /* Ensure the list item has the same width as the button */
+    }
+    
+    #filter-button {
+        display: block; /* Change to block to ensure it takes the full width */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%; /* Ensure it takes the full width of the parent */
+        padding: 0.5rem 1rem;
+        box-sizing: border-box;
+    }
+    
+    #genre-type {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline;
+        max-width: 100%;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px; /* Space between buttons */
+    }
+
+    .fc-more-popover .fc-title {
+        display: block;
+    }
+    #Game_Filter .bg-gray-800 {
+        width: 90%;
+        padding: 10px; 
+    }
+}
+
+.input-container {
+    display: inline-flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Space below the search bar */
+    width: 550px;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* Allow the center container to grow */
+    margin-right: 250px;
+}
+
+.search-bar {
+    font-family: 'Roboto', sans-serif; /* Font for input text */
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    border: 2px solid #ffcc00; /* Yellow border */
+    padding: 5px 10px; /* Padding for input size */
+    box-shadow: 0 4px #ff9900; /* Shadow for 3D effect */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+    position: relative;
+}
+
+.search-bar::placeholder {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #ffffff; /* Color del placeholder */
+    text-transform: uppercase; /* Uppercase text */
+}
+
+.input-container:hover .search-bar {
+    transform: translateY(-2px); /* Mueve ambos elementos hacia arriba */
+    box-shadow: 0 6px #ff9900; /* Sombra mejorada */
+}
+
+.search-bar:focus {
+    outline: none; /* Remove default focus outline */
+    color: #fff; /* White text */
+    transform: translateY(-2px); /* Slight lift on focus */
+    box-shadow: 0 6px #ff9900; /* Enhanced shadow on focus */
+    background-color: #333; /* Ensure background color stays the same */
+}
+
+.search-bar::-webkit-search-cancel-button {
+    margin-right: 25px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>') no-repeat center;
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    background-color: #464749; /* Un gris más claro */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Sombra blanca */
+    border: 2px solid red; /* Borde rojo */
+    border-radius: 50%; /* Borde redondeado */
+}
+
+.search-bar::-webkit-search-cancel-button:hover {
+    background-color: lightgray; /* Fondo gris claro */
+    border-color: darkred; /* Borde rojo oscuro */
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #cbd5e0; /* Color de la lupa */
+    pointer-events: none; /* Para que no interfiera con el input */
+}
+
+.results-container {
+    display: none;
+    position: absolute;
+    top: 100%; /* Justo debajo del input */
+    left: 0;
+    width: 100%; /* Para que tenga el mismo ancho que el input */
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #2d3748 !important; /* Asegúrate de que este color sea el correcto */
+    border: 1px solid #4a5568 !important; /* Color del borde */
+    color: #fff;
+    padding: 0; /* Reduce el padding del contenedor */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    
+    border-radius: 8px !important; /* Asegúrate de que este valor sea el correcto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.results-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.results-container::-webkit-scrollbar-track {
+    background: #2d3748; /* Color de fondo del track */
+}
+
+.results-container::-webkit-scrollbar-thumb {
+    background-color: #227ccf; /* Color del thumb */
+    border-radius: 4px;
+    border: 2px solid #2d3748; /* Espacio alrededor del thumb */
+}
+
+.results-container div {
+    white-space: normal; /* Permite que el texto se divida en varias líneas */
+}
+
+.result-item {
+    display: block;
+    border-bottom: 1px solid #4a5568; /* Tailwind: border-gray-700 */
+    cursor: pointer;
+    padding: 0.5rem 0; /* Añade padding vertical */
+    margin: 0; /* Añade un pequeño margen inferior */
+    border-radius: 0.5rem; /* Hace las puntas más redondeadas */
+    transition: background-color 0.3s ease;
+}
+
+.result-item a {
+    display: block; /* Hace que el enlace ocupe todo el bloque */
+    padding: 0 0.5rem; /* Añade padding horizontal */
+    color: #ffffff; /* Tailwind: text-white */
+    text-decoration: none; /* Elimina el subrayado */
+    border-radius: 0.5rem; /* Hace las puntas más redondeadas */
+}
+
+.result-item:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #4a5568; /* Tailwind: bg-gray-700 */
+    text-decoration: none; /* Asegura que no haya subrayado al pasar el mouse */
+}
+
+.hover-effect:hover {
+    transform: scale(1.1);
+}
+
+.retro-button {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    border: 2px solid #ffcc00; /* Yellow border */
+    padding: 10px 10px; /* Reduced padding for smaller size */
+    font-size: 13px; /* Smaller font size */
+    text-transform: uppercase; /* Uppercase text */
+    box-shadow: 0 4px #ff9900; /* Shadow for 3D effect */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+    text-decoration: none !important;
+}
+
+.retro-button-follow {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #5bc0de; /* Info color */
+    color: #fff; /* White text */
+    border: 2px solid #46b8da; /* Adjusted border color */
+    box-shadow: 0 4px #31b0d5; /* Adjusted shadow color */
+    padding: 10px 10px; /* Reduced padding for smaller size */
+    font-size: 13px; /* Smaller font size */
+    text-transform: uppercase; /* Uppercase text */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+    text-decoration: none !important;
+    outline: none; /* Remove the black border */
+}
+
+.retro-button-follow:focus {
+    outline: none;
+}
+
+.retro-button-unfollow {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #d9534f; /* Danger color */
+    color: #fff; /* White text */
+    border: 2px solid #d43f3a; /* Adjusted border color */
+    box-shadow: 0 4px #c9302c; /* Adjusted shadow color */
+    padding: 10px 10px; /* Reduced padding for smaller size */
+    font-size: 13px; /* Smaller font size */
+    text-transform: uppercase; /* Uppercase text */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+    text-decoration: none !important;
+    outline: none; /* Remove the black border */
+}
+
+.retro-button-unfollow:focus {
+    outline: none;
+}
+
+.retro-button-genre {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    border: 2px solid #ffcc00; /* Yellow border */
+    padding: 10px 10px; /* Reduced padding for smaller size */
+    font-size: 10px; /* Smaller font size */
+    text-transform: uppercase; /* Uppercase text */
+    box-shadow: 0 4px #ff9900; /* Shadow for 3D effect */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+    text-decoration: none !important;
+}
+
+.retro-button-genre:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px #ff9900; /* Enhanced shadow on hover */
+}
+
+.retro-style {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #ffcc00;
+    padding: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    box-shadow: 0 4px #ff9900;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+.font-permanent-marker {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.retro-button:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px #ff9900; /* Enhanced shadow on hover */
+}
+
+.fc {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #000; /* Black background */
+    border: 2px solid #ffcc00; /* Yellow border */
+}
+
+.fc .fc-button {
+    color: #fff;
+    border: 2px solid #ffcc00;
+    background-color: #333; /* Dark background */
+    text-transform: uppercase;
+    box-shadow: 0 4px #ff9900;
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.fc .fc-button:active {
+    box-shadow: 0 4px #ff9900;
+}
+
+.fc .fc-button:focus {
+    box-shadow: 0 4px #ff9900;
+}
+
+.fc .fc-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px #ff9900;
+}
+
+.fc-col-header-cell-cushion:hover {
+    text-decoration: none;
+}
+
+.retro-card {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #ffcc00;
+    padding: 10px;
+    font-size: 13px;
+    box-shadow: 0 4px #ff9900;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.retro-card img {
+    border: 2px solid #ffcc00;
+    box-shadow: 0 4px #ff9900;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.retro-card h1 {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.2s;
+    text-transform: uppercase;
+}
+
+.retro-card h1:hover {
+    color: #ffcc00;
+}
+
+.retro-card-info {
+    font-family: 'Arial', sans-serif;
+    color: #badefc;
+}
+
+.retro-font {
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+.fc-daygrid-day-number:hover {
+    text-decoration: none;
+}

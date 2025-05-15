@@ -1,0 +1,54 @@
+{% extends "vid_man/layout.html" %}
+
+{% block body %}
+{% load custom_filters %}
+<div class="bg-black">
+    <div class="text-center p-6 bg-gray-800 rounded-lg shadow-lg retro-style m-2">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-400">Profile: {{ request.user }}</h1>
+        <h3 class="text-xl mt-4 text-gray-300">Games that {{ request.user }} has wishlisted:</h3>
+    </div>
+
+    <div class="flex flex-row flex-wrap justify-content-center pb-10 text-center bg-black">
+        {% if followed_games %}
+            {% for game in followed_games %}
+                <div style="width: 440px; height: 500px; margin-bottom: 20px; font-size: 16px;">
+                    <div class="retro-card flex flex-col items-center h-full transition-transform transform hover:scale-105 m-8 bg-gray-700 rounded-lg shadow-lg p-5">
+                        <div class="animate-fade-in h-full">
+                            <img 
+                            src="https://images.igdb.com/igdb/image/upload/t_cover_big/{{game.cover_id}}.jpg" 
+                            srcset="https://images.igdb.com/igdb/image/upload/t_cover_small/{{game.cover_id}}.jpg 320w, 
+                                    https://images.igdb.com/igdb/image/upload/t_cover_big/{{game.cover_id}}.jpg 800w" 
+                            sizes="(max-width: 600px) 320px, 800px" 
+                            alt="{{game.name}}" 
+                            class="rounded-lg image-detail w-full object-cover transition-transform transform hover:scale-110 mx-auto border-4 border-blue-700"
+                            style="max-height: 250px;">
+        
+                            <div class="mt-3">
+                                <a href="{% url 'game_detail' game.id %}" class="wishlist-title">
+                                    <h1 class="text-2xl font-bold text-white break-words transition duration-300 ease-in-out">{{ game.name }}</h1>
+                                </a>
+                            </div>
+        
+                            <div class="mt-3 px-4 flex-grow">
+                                <p class="retro-card-info" style="font-size: 16px;"><strong style="font-size: 20px;">Genres: </strong>
+                                    {% for genre in game.genres.all %}
+                                        {{ genre.name }}{% if not forloop.last %}, {% else %}.{% endif %}
+                                    {% endfor %}
+                                </p>
+                            </div>
+        
+                            <div class="mt-2 px-4">
+                                <p class="retro-card-info" style="font-size: 16px;"><strong style="font-size: 20px;">Release Date: </strong>{{ game.release_date }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        {% else %}
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white m-3 mt-5 retro-font">No Games have been Added to the Wishlist yet!</h1>
+        {% endif %}
+    </div>
+</div>
+    
+{% endblock %}

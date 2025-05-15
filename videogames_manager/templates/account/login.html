@@ -1,0 +1,50 @@
+{% extends "vid_man/layout.html" %}
+
+{% load custom_filters %}
+
+{% block body %}
+    <div class="flex items-center justify-center mt-4 m-3">
+        <div class="bg-gray-700 p-8 rounded-lg shadow-md w-full max-w-md">
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+            
+                <h2 class="text-center text-2xl font-bold text-white retro-font">Login</h2>
+            
+                {% for field in form %}
+                    <div class="mb-4 mt-3">
+                        {% if field.field.widget.input_type == "checkbox" %}
+                            <div class="flex items-center">
+                                {{ field|add_class:"mr-2 leading-tight" }}
+                                <label class="text-white text-sm">{{ field.label }}</label>
+                            </div>
+                        {% else %}
+                            <label class="block text-white text-sm font-bold mb-2">{{ field.label_tag }}</label>
+                            {{ field|add_class:"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" }}
+                        {% endif %}
+                {% endfor %}
+
+                    {% if form.errors %}
+                        <ul class="errorlist text-white" style="margin-top: 0; margin-bottom: 0;">
+                            {% for error in form.errors.values %}
+                                {% for e in error %}
+                                    <li>{{ e }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    
+                    {% if messages %}
+                        <ul class="mt-3">
+                                {% for message in messages %}
+                                    <div class="alert alert-success">{{ message }}</div>
+                                {% endfor %}
+                            {% endif %}
+                        </ul>
+                    </div>
+                <div class="flex justify-center">
+                    <input class="retro-button w-full max-w-xs" type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

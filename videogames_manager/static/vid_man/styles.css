@@ -1,0 +1,643 @@
+/* FullCalendar CSS */
+
+#calendar {
+    min-height: 3015px;
+    overflow: visible !important;
+}
+
+.fc {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #000;
+    border: 2px solid #ffcc00;
+}
+
+.fc .fc-button {
+    color: #fff;
+    border: 2px solid #ffcc00;
+    background-color: #333;
+    text-transform: uppercase;
+    box-shadow: 0 4px #ff9900;
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.fc-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 10px; 
+    text-align: center;
+}
+
+.fc .fc-scroller-liquid-absolute {
+    overflow: visible !important;
+}
+
+.fc-scroller {
+    overflow: hidden !important;
+    width: 100%;
+}
+
+.fc .fc-daygrid-day-number {
+    color: #63b3ed;
+}
+
+.fc .fc-daygrid-day {
+    min-width: 100px;
+    border-radius: 8px;
+    border: 1px solid #2d3748;
+}
+
+.fc .fc-daygrid-day:hover {
+    background-color: #2d3748;
+    transition: background-color 0.3s;
+}
+
+.fc-col-header-cell-cushion:hover {
+    text-decoration: none;
+}
+
+.fc-event {
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #227ccf;
+    color: #ffffff;
+    border-radius: 4px;
+    margin-bottom: 10px; 
+}
+
+.important-event {
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #b82828; 
+    color: #ffffff; 
+    border-radius: 4px;
+}
+
+.responsive-event {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.responsive-event img {
+    margin-right: 10px;
+}
+
+.fc-more-popover {
+    background-color: #1a202c !important;
+    color: #eeeeee !important;  
+    border: 1px solid #ccc;
+    padding: 10px; 
+    border-radius: 5px;
+}
+
+.fc-popover {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Retro CSS */
+
+.retro-style {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #ffcc00;
+    padding: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    box-shadow: 0 4px #ff9900;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.retro-card {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #ffcc00;
+    padding: 10px;
+    font-size: 13px;
+    box-shadow: 0 4px #ff9900;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.retro-card img {
+    border: 2px solid #ffcc00;
+    box-shadow: 0 4px #ff9900;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.retro-card h1 {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.2s;
+    text-transform: uppercase;
+}
+
+.retro-card h1:hover {
+    color: #ffcc00;
+}
+
+.retro-card-info {
+    font-family: 'Arial', sans-serif;
+    color: #badefc;
+}
+
+.retro-font {
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+.retro-button {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #ffcc00;
+    padding: 10px 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    box-shadow: 0 4px #ff9900;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none !important;
+}
+
+.retro-button-follow {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #5bc0de;
+    color: #fff; 
+    border: 2px solid #46b8da; 
+    box-shadow: 0 4px #31b0d5; 
+    padding: 10px 10px; 
+    font-size: 13px; 
+    text-transform: uppercase; 
+    transition: transform 0.2s, box-shadow 0.2s; 
+    text-decoration: none !important;
+    outline: none;
+}
+
+.retro-button-follow:focus {
+    outline: none;
+}
+
+.retro-button-unfollow {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #d9534f;
+    color: #fff; 
+    border: 2px solid #d43f3a; 
+    box-shadow: 0 4px #c9302c;
+    padding: 10px 10px; 
+    font-size: 13px; 
+    text-transform: uppercase;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none !important;
+    outline: none;
+}
+
+.retro-button-unfollow:focus {
+    outline: none;
+}
+
+.retro-button-genre {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #333; 
+    color: #fff;
+    border: 2px solid #ffcc00; 
+    padding: 10px 10px;
+    font-size: 10px; 
+    text-transform: uppercase;
+    box-shadow: 0 4px #ff9900;
+    transition: transform 0.2s, box-shadow 0.2s; 
+    text-decoration: none !important;
+}
+
+.retro-button-genre:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px #ff9900;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+.font-permanent-marker {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.retro-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px #ff9900;
+}
+
+.fc .fc-button:active {
+    box-shadow: 0 4px #ff9900;
+}
+
+.fc .fc-button:focus {
+    box-shadow: 0 4px #ff9900;
+}
+
+.fc .fc-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px #ff9900;
+}
+
+.fc-daygrid-day-number:hover {
+    text-decoration: none;
+}
+
+/* Typpy box CSS */
+
+.tippy-box[data-theme~='game'] {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a202c;
+    color: #fff;
+    border: 2px solid #ffcc00;
+    padding: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px #ff9900, 0 6px 20px rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+
+.tippy-box[data-theme~='game'][data-placement^='top'] > .tippy-arrow::before {
+    border-top-width: 10px;
+    border-top-color: #1a202c;
+}
+
+.tippy-box[data-theme~='game'][data-placement^='bottom'] > .tippy-arrow::before {
+    border-bottom-width: 10px;
+    border-bottom-color: #1a202c;
+}
+
+.tippy-box[data-theme~='game'][data-placement^='left'] > .tippy-arrow::before {
+    border-left-width: 10px;
+    border-left-color: #1a202c;
+}
+
+.tippy-box[data-theme~='game'][data-placement^='right'] > .tippy-arrow::before {
+    border-right-width: 10px;
+    border-right-color: #1a202c;
+}
+
+/* Search Container CSS */
+
+.input-container {
+    display: inline-flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 566px;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    margin-right: 250px;
+}
+
+.search-bar {
+    font-family: 'Roboto', sans-serif; 
+    background-color: #333;
+    color: #fff; 
+    border: 2px solid #ffcc00;
+    padding: 5px 10px;
+    box-shadow: 0 4px #ff9900;
+    transition: transform 0.2s, box-shadow 0.2s; 
+    position: relative;
+}
+
+.search-bar::placeholder {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.input-container:hover .search-bar {
+    transform: translateY(-2px);
+    box-shadow: 0 6px #ff9900;
+}
+
+.search-bar:focus {
+    outline: none;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px #ff9900; 
+    background-color: #333;
+}
+
+.search-bar::-webkit-search-cancel-button {
+    margin-right: 25px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>') no-repeat center;
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    background-color: #464749;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    border: 2px solid red;
+    border-radius: 50%;
+}
+
+.search-bar::-webkit-search-cancel-button:hover {
+    background-color: lightgray;
+    border-color: darkred;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #cbd5e0;
+    pointer-events: none;
+}
+
+.results-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #2d3748 !important;
+    border: 1px solid #4a5568 !important;
+    color: #fff;
+    padding: 0;
+    z-index: 1000;
+    
+    border-radius: 8px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.results-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.results-container::-webkit-scrollbar-track {
+    background: #2d3748;
+}
+
+.results-container::-webkit-scrollbar-thumb {
+    background-color: #227ccf;
+    border-radius: 4px;
+    border: 2px solid #2d3748;
+}
+
+.results-container div {
+    white-space: normal;
+}
+
+.result-item {
+    display: block;
+    border-bottom: 1px solid #4a5568;
+    cursor: pointer;
+    padding: 0.5rem 0; 
+    margin: 0; 
+    border-radius: 0.5rem; 
+    transition: background-color 0.3s ease;
+}
+
+.result-item a {
+    display: block; 
+    padding: 0 0.5rem; 
+    color: #ffffff; 
+    text-decoration: none; 
+    border-radius: 0.5rem; 
+}
+
+.result-item:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #4a5568; 
+    text-decoration: none; 
+}
+
+.hover-effect:hover {
+    transform: scale(1.1);
+}
+
+/* Other CSS */
+
+.text-blue {
+    color: #badefc
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.image-detail {
+    width: 180px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+.opacity-0 {
+    opacity: 0 !important;
+}
+
+.pointer-events-none {
+    pointer-events: none !important;
+}
+
+.logo {
+    width: 250px;
+    height: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animations CSS */
+
+.animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+}
+
+.bounce {
+    animation: bounce 0.8s ease-in-out forwards;
+    will-change: transform, opacity;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scaleY(0) rotateX(90deg);
+        opacity: 0;
+    }
+    25% {
+        transform: scaleY(1.1) rotateX(10deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scaleY(1) rotateX(0deg);
+        opacity: 1;
+    }
+    75% {
+        transform: scaleY(1.05) rotateX(-5deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleY(1) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 800px) {
+    /* Calendar CSS */
+    .game-title {
+        font-size: 16px !important;
+    }
+
+    #Game_Filter {
+        margin: 0 15px;
+    }
+
+    .fc-toolbar-chunk {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fc-toolbar h2,
+    .fc-day-number {
+        font-size: 13px !important;
+    }
+
+    .fc-col-header-cell-cushion {
+        font-size: 10px !important;
+    }
+
+    .fc-today-button {
+        font-size: 12px !important; 
+        padding: 5px 10px !important; 
+        margin-bottom: 10px !important;
+    }
+
+    .fc-prev-button,
+    .fc-next-button {
+        font-size: 12px !important; 
+        padding: 5px 10px !important; 
+    }
+
+    .fc .fc-daygrid-more-link {
+        font-size: 4.5px;
+        padding: 1px;
+        margin-top: 0;
+    }
+
+    .fc-more-popover .fc-title {
+        display: block;
+    }
+
+    .responsive-event .fc-title {
+        display: none;
+    }
+
+    #genre-type {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 45px; 
+        display: inline-block;
+    }
+
+    .search-bar {
+        width: 100%; 
+        max-width: 300px;
+        height: 30px; 
+        box-sizing: border-box; 
+        font-size: 10px;
+    }
+
+    /* Button CSS */
+
+    .login-button, .register-button {
+        font-size: 16px !important;
+        padding: 5px !important;
+    }
+
+    .retro-button-genre {
+        font-size: 7px;
+        padding: 5px; 
+    }
+
+    .retro-button {
+        padding: 10px;
+        font-size: 6.2px;
+    }
+
+    #filter-button span {
+        display: none;
+    }
+
+    /* Container CSS */
+
+    .center-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .input-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 235px;
+        margin-top: 20px; 
+    }
+      
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 1px;
+        margin-bottom: 10px;
+    }
+
+    /* Other CSS */
+
+    .mr-10 {
+        margin-left: 5px;
+        margin-right: 20px;
+    }
+
+    .logo {
+        width: 100px;
+        height: 75px;
+    }
+
+    img[alt] {
+        font-size: 0;
+    }
+
+    .fc-icon {
+        font-size: 12px !important;
+    }
+}

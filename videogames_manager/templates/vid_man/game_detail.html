@@ -1,0 +1,60 @@
+{% extends "vid_man/layout.html" %}
+
+{% block body %}
+    <div class="ml-3 mr-3 mt-2">
+        <div class="flex flex-col items-center mt-8 transition-transform transform hover:scale-105 m-8 retro-card rounded-lg shadow-lg p-5">
+            <div class="animate-fade-in">
+                <img 
+                src="https://images.igdb.com/igdb/image/upload/t_cover_big/{{game_data.cover_id}}.jpg" 
+                srcset="https://images.igdb.com/igdb/image/upload/t_cover_small/{{game_data.cover_id}}.jpg 320w, 
+                        https://images.igdb.com/igdb/image/upload/t_cover_big/{{game_data.cover_id}}.jpg 800w" 
+                sizes="(max-width: 600px) 320px, 800px" 
+                alt="{{game_data.name}}" 
+                class="rounded-lg image-detail w-full object-cover transition-transform transform hover:scale-110 mx-auto border-4 border-blue-700">
+
+            <div class="text-center mt-3 retro-font">
+                <h1 class="text-4xl font-bold text-white game-title">{{game_data.name}}</h1>
+            </div>
+            <div style="font-size: 16px;">
+                <div class="mt-3 px-4">
+                    <p class="text-center retro-card-info" style="border: 1px solid transparent;"><strong style="font-size: 18px;">Summary: </strong>{{game_data.summary}}</p>
+                </div>
+                <div class="mt-3 px-4">
+                    <p class="text-center retro-card-info"><strong style="font-size: 18px;">Storyline: </strong>{{game_data.storyline}}</p>
+                </div>
+                <hr class="my-4 border-gray-600">
+                <div class="mt-3 px-4 retro-card-info">
+                    <p class="retro-card-info"><strong style="font-size: 18px;">Genres: </strong>
+                        {% for genre in game_data.genres.all %}
+                            {{ genre.name }}{% if not forloop.last %}, {% else %}.{% endif %}
+                        {% endfor %}
+                    </p>
+                </div>
+                <div class="mt-2 px-4">
+                    <p class="retro-card-info"><strong style="font-size: 18px;">Release Date: </strong>{{ game_data.release_date }}</p>
+                    <p class="mt-2 retro-card-info"><strong style="font-size: 18px;">Platforms: </strong>
+                        {% for platform in game_data.platform.all %}
+                            {{ platform.name }}{% if not forloop.last %}, {% endif %}
+                        {% empty %}
+                            No platforms available.
+                        {% endfor %}
+                    </p>
+                    <p class="retro-card-info mt-2"><strong style="font-size: 18px;">Updated At: </strong>{{ game_data.updated_at.updated_at }}</p>
+                    <form action="{% url 'follow_game' game_data.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="flex justify-center items-center mt-3">
+                        <button type="button" id="follow_button" data-game-id="{{ game_data.id }}" class="{% if is_followed %}retro-button-unfollow{% else %}retro-button-follow{% endif %}">
+                            {% if is_followed %}Unfollow{% else %}Follow{% endif %}
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-3 text-center">
+                    <strong><p id="message" class=""></p></strong>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

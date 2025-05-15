@@ -1,0 +1,43 @@
+{% extends "vid_man/layout.html" %}
+
+{% block body %}
+{% load custom_filters %}
+
+<div id="calendar" class="d-flex flex-align-items p-4 m-3 text-white"></div>
+
+<form id="Form-Filter-Game" action="{% url 'index' %}" method="GET">
+    {% csrf_token %}
+    <div id="Game_Filter" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+        <div class="bg-gray-800 p-8 rounded-lg shadow-2xl space-y-6 relative">
+            <button type="button" class="absolute top-2 right-2 text-white bg-red-600 rounded-full p-2 hover:bg-red-800 transition duration-300" onclick="close_Filter_Modal()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="">
+                <h2 class="text-2xl font-bold text-white mb-4 text-center retro-font">Select one Game Genre</h2>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-4">
+                <button type="button" class="retro-button-genre" data-genre="all">
+                    All Genres
+                </button>
+                {% for genre in genres %}
+                <button type="button" class="retro-button-genre" data-genre="{{ genre.name }}">
+                    {{ genre.name }}
+                </button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    function close_Filter_Modal() {
+        const form = document.querySelector("#Form-Filter-Game");
+        const modal = document.getElementById('Game_Filter');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        form.reset();
+    }
+</script>
+{% endblock %}

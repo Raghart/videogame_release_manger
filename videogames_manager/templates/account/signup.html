@@ -1,0 +1,48 @@
+{% extends "vid_man/layout.html" %}
+
+{% load custom_filters %}
+
+{% block body %}
+<div class="flex items-center justify-center mt-4 m-3">
+    <div class="bg-gray-700 p-8 rounded-lg shadow-md w-full max-w-md">
+        <h2 class="mt-4 text-3xl font-bold text-center text-white retro-font">Register</h2>
+
+        <form action="{% url 'signup' %}" method="POST" class="max-w-md mx-auto rounded-lg shadow-md space-y-6 text-white">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                {{ form.username.label_tag|add_class:"block text-sm font-medium" }}
+                {{ form.username|add_class:"text-black mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" }}
+            </div>
+
+            <div class="form-group">
+                {{ form.email.label_tag|add_class:"block text-sm font-medium" }}
+                {{ form.email|add_class:"text-black mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" }}
+            </div>
+
+            <div class="form-group">
+                {{ form.password1.label_tag|add_class:"block text-sm font-medium" }}
+                {{ form.password1|add_class:"text-black mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" }}
+            </div>
+
+            <div class="form-group">
+                {{ form.password2.label_tag|add_class:"block text-sm font-medium" }}
+                {{ form.password2|add_class:"text-black mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" }}
+            </div>
+
+            {% for field in form %}
+                {% if field.errors %}
+                    <p class="text-red-500 mt-3 mb-0">{{ field.label }}:</p>
+                    <ul class="errorlist" style="margin-top: 0; margin-bottom: 0;">
+                        <li>{{ field.errors }}</li>
+                    </ul>
+                {% endif %}
+            {% endfor %}
+
+            <div class="flex justify-center">
+                <input class="retro-button w-full max-w-xs" type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
